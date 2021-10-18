@@ -1,0 +1,33 @@
+@baseUrl = http://localhost:3000/api
+@resouceName=categories
+# Categories
+
+# @name getAllCategories
+GET {{baseUrl}}/{{resouceName}}
+
+###
+
+# @name addNewCategories
+POST {{baseUrl}}/{{resouceName}}
+Content-Type: application/json
+
+{
+    "name" : "Silicon"
+}
+
+###
+
+# @name addNewCategories
+PATCH  {{baseUrl}}/{{resouceName}}/2
+Content-Type: application/json
+
+{
+    "name" : "Silicon"
+}
+
+###
+
+# @name deleteCategories
+DELETE   {{baseUrl}}/{{resouceName}}/4
+
+

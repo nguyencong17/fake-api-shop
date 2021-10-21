@@ -30,7 +30,8 @@ router.render = (req, res) => {
   //If yes, custom output
   const headers = res.getHeaders();
 
-  const totalCountHeader = headers['x-total-count'];
+  //const totalCountHeader = headers['x-total-count'];
+  const totalCountHeader = 100;
   if(req.method === 'GET' && totalCountHeader){
     //console.log(req._parsedUrl.query);
     const queryParams = queryString.parse(req._parsedUrl.query);
@@ -38,7 +39,7 @@ router.render = (req, res) => {
       data: res.locals.data,
       pagination: {
         _page: Number.parseInt(queryParams._page) || 1,
-        _limit: Number.parseInt(queryParams._limit) || 10,
+        _limit: Number.parseInt(queryParams._limit) || 12,
         _totalRows: Number.parseInt(totalCountHeader),
       },
     };
